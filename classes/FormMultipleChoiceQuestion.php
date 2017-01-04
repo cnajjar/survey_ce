@@ -120,7 +120,7 @@ class FormMultipleChoiceQuestion extends FormQuestionWidget
 		}
 		else if ((strcmp($this->questiontype, "mc_dichotomous") == 0))
 		{
-			if ($varInput["value"] == 0)
+			if ($varInput["value"] == 0 && $this->mandatory)
 			{
 				$this->addError(sprintf($GLOBALS['TL_LANG']['ERR']['mandatory_mc_sr'], $this->title));
 				return $varInput;
